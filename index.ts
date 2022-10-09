@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import { Result } from './src/types/result.type';
 import { speeches } from './src/assets/test-data';
 import { AuthorSpeech, Speech } from './src/types/speech.type';
-import { countAuthorSpeeches, sortAuthorSpeeches } from './src/helpers';
+import { countAuthorSpeeches, sortAuthorSpeeches } from './src/utils/author.utils';
 
 dotenv.config();
 
