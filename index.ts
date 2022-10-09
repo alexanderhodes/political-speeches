@@ -1,8 +1,8 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+import fs from 'fs';
 import { Result } from './src/types/result.type';
 import { speeches } from './src/assets/test-data';
-import { AuthorSpeech, Speech } from './src/types/speech.type';
 import { countAuthorSpeeches, sortAuthorSpeeches } from './src/utils/author.utils';
 
 dotenv.config();
@@ -32,6 +32,18 @@ app.get('/', (req: Request, res: Response) => {
   };
 
   res.send(result);
+});
+
+app.get('/example-1.csv', (req: Request, res: Response) => {
+  const buffer = fs.readFileSync('./assets/example-1.csv');
+
+  res.send(buffer);
+});
+
+app.get('/example-2.csv', (req: Request, res: Response) => {
+  const buffer = fs.readFileSync('./assets/example-2.csv');
+
+  res.send(buffer);
 });
 
 app.listen(PORT, () => {
