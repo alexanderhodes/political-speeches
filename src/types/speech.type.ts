@@ -5,4 +5,9 @@ export type Speech = {
     words: number;
 }
 
+export type AuthorResult = {
+    author: string;
+    count: number;
+}
+
 export type AuthorSpeech = Map<string, number>;
