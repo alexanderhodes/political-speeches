@@ -1,11 +1,11 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { Result } from './src/types/result.type';
+import { PORT, TOPIC, YEAR } from './src/config';
 
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT;
 
 app.get('/', (req: Request, res: Response) => {
   const result: Result = {
@@ -17,6 +17,6 @@ app.get('/', (req: Request, res: Response) => {
   res.send(result);
 });
 
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
 });
