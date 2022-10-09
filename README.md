@@ -1,3 +1,5 @@
+[![Docker Build](https://github.com/alexanderhodes/political-speeches/actions/workflows/build.yml/badge.svg)](https://github.com/alexanderhodes/political-speeches/actions/workflows/build.yml)
+
 # Political speeches
 
 ## Installation
