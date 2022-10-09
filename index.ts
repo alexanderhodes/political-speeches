@@ -12,6 +12,10 @@ const PORT = process.env.PORT ?? 3000;
 const YEAR = process.env.YEAR ?? "2013";
 const TOPIC = process.env.TOPIC ?? "Internal Security";
 
+app.get('/', (req: Request, res: Response) => {
+  res.redirect('/evaluation');
+})
+
 app.get('/evaluation', async (req: Request, res: Response) => {
   const queryParam = req.query.url;
   
