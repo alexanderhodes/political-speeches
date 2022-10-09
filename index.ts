@@ -14,14 +14,14 @@ const TOPIC = process.env.TOPIC ?? "Internal Security";
 
 app.get('/evaluation', async (req: Request, res: Response) => {
   const queryParam = req.query.url;
-
-  const urls: string[] = Array.isArray(queryParam) ? (queryParam) as string[] : [(queryParam) as string];
-
-  if (urls.length === 0) {
+  
+  // check if query param url exists
+  if (queryParam === undefined) {
     const result: Result = { leastWordy: null, mostSecurity: null, mostSpeeches: null };
 
     res.send(result);
   } else {
+    const urls: string[] = Array.isArray(queryParam) ? (queryParam) as string[] : [(queryParam) as string];
     const data = await requestCsvFiles(urls);
     // speeches mapped from csv files
     const speeches = mapCsvDataToSpeeches(data);
