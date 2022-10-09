@@ -58,6 +58,10 @@ app.get('/example-2.csv', (req: Request, res: Response) => {
   res.send(buffer);
 });
 
+app.get('*', (req: Request, res: Response) => {
+  res.status(404).send('Resource not found!');
+});
+
 app.listen(PORT, () => {
   console.log(`[server]: Server is running at http://localhost:${PORT}`);
 });
